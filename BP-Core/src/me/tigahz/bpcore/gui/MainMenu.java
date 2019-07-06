@@ -132,37 +132,45 @@ public class MainMenu implements CommandHandler, Listener {
 				e.setCancelled(true);
 			} else if (Items.getClickedItem(e, "&9&lHelp")) {
 				e.setCancelled(true);
-				p.sendMessage("help menu");
+				HelpMenu.createMenu(p);
 			} else if (Items.getClickedItem(e, "&9&lResource Pack")) {
 				e.setCancelled(true);
-				p.sendMessage("rp menu");
+				ResourcePackMenu.createMenu(p);
 			} else if (Items.getClickedItem(e, "&9&lSocial Media")) {
 				e.setCancelled(true);
-				p.sendMessage("sm menu");
+				SocialMediaMenu.createMenu(p);
 			} else if (Items.getClickedItem(e, "&9&lProjects")) {
 				e.setCancelled(true);
 				p.sendMessage("projects menu");
 			} else if (Items.getClickedItem(e, "&9&lOur Website")) {
 				e.setCancelled(true);
-				p.sendMessage("website");
+				p.performCommand("website");
 			} else if (Items.getClickedItem(e, "&9&lRules")) {
 				e.setCancelled(true);
-				p.sendMessage("rules");
+				p.closeInventory();
+				p.performCommand("rules");
 			} else if (Items.getClickedItem(e, "&9&lSpawn")) {
 				e.setCancelled(true);
-				p.sendMessage("spawn");
+				p.performCommand("spawn");
 			} else if (Items.getClickedItem(e, "&9&lRanks")) {
 				e.setCancelled(true);
 				p.sendMessage("ranks");
 			} else if (Items.getClickedItem(e, "&9&lApply")) {
 				e.setCancelled(true);
-				p.sendMessage("apply");
+				p.closeInventory();
+				p.performCommand("blueprintcore:apply");
 			} else if (Items.getClickedItem(e, "&9&lPromotion Request")) {
 				e.setCancelled(true);
-				p.sendMessage("pr");
+				p.closeInventory();
+				p.performCommand("blueprintcore:pr");
 			} else if (Items.getClickedItem(e, "&9&lBuilding Tools")) {
 				e.setCancelled(true);
 				p.sendMessage("bt");
+			} else if (Items.getClickedItem(e, "&c&lGo Back")) {
+				e.setCancelled(true);
+			} else if (Items.getClickedItem(e, "&c&lExit Menu")) {
+				e.setCancelled(true);
+				p.closeInventory();
 			} else {
 				e.setCancelled(true);
 			}

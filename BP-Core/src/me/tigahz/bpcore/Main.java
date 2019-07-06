@@ -10,12 +10,18 @@ import org.bukkit.plugin.java.JavaPlugin;
 import me.tigahz.bpcore.commands.ApplyCommand;
 import me.tigahz.bpcore.commands.BlueprintCommand;
 import me.tigahz.bpcore.commands.NightVisionCommand;
+import me.tigahz.bpcore.commands.PointsCommand;
+import me.tigahz.bpcore.commands.PromotionRequestCommand;
 import me.tigahz.bpcore.config.DefaultConfig;
 import me.tigahz.bpcore.config.FAQConfig;
 import me.tigahz.bpcore.config.MessagesConfig;
 import me.tigahz.bpcore.config.ProjectsConfig;
 import me.tigahz.bpcore.config.StaffConfig;
+import me.tigahz.bpcore.gui.HelpMenu;
 import me.tigahz.bpcore.gui.MainMenu;
+import me.tigahz.bpcore.gui.ResourcePackMenu;
+import me.tigahz.bpcore.gui.SocialMediaMenu;
+import me.tigahz.bpcore.gui.StaffMenu;
 import me.tigahz.bpcore.handler.IDHandler;
 import me.tigahz.bpcore.handler.SwearHandler;
 import me.tigahz.bpcore.listeners.JoinEvents;
@@ -85,6 +91,9 @@ public class Main extends JavaPlugin {
 		pm.registerEvents(new SwearHandler(), this);
 		pm.registerEvents(new MainMenu(), this);
 		pm.registerEvents(new LoadCarsEvent(), this);
+		pm.registerEvents(new ResourcePackMenu(), this);
+		pm.registerEvents(new SocialMediaMenu(), this);
+		pm.registerEvents(new HelpMenu(), this);
 		
 	}
 
@@ -97,6 +106,12 @@ public class Main extends JavaPlugin {
 		Stream.of(new SwearHandler()).forEach(it -> it.register(this));
 		Stream.of(new MainMenu()).forEach(it -> it.register(this));
 		Stream.of(new LoadCarsEvent()).forEach(it -> it.register(this));
+		Stream.of(new PointsCommand()).forEach(it -> it.register(this));
+		Stream.of(new ResourcePackMenu()).forEach(it -> it.register(this));
+		Stream.of(new SocialMediaMenu()).forEach(it -> it.register(this));
+		Stream.of(new PromotionRequestCommand()).forEach(it -> it.register(this));
+		Stream.of(new HelpMenu()).forEach(it -> it.register(this));
+		Stream.of(new StaffMenu()).forEach(it -> it.register(this));
 		
 	}
 	

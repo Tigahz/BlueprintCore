@@ -1,0 +1,61 @@
+director:
+  cd984ea6-afb6-4420-84a3-0a48c35ed017:
+    name: Ryer
+    lore:
+    - 'Ryer is the great'
+  d647a72b-a933-41fe-a620-e77b6c71f1c8:
+    name: Adam
+    lore:
+    - 'Eh add what u want'
+    - 'here lmao'
+  21e2492e-b7fa-4015-aa9c-999c46fdf838:
+    name: Steve
+    lore:
+    - 'Pretty noice'
+  37d35d3b-b635-4f02-b2c1-9b4c3d0cdf83:
+    name: Beezbo
+    lore:
+    - 'Was never on IAS'
+  6fd65c6b-8e27-47b1-ac53-59fdc2b6b8ac:
+    name: Zappa
+    lore:
+    - 'Never seen him on'
+moderator:
+  ae22fda2-7b43-44a1-898c-a680cfd18a62:
+    name: Tot
+    lore:
+    - 'Has more bans on'
+    - 'IAS than MCE'
+  154b49ab-9c0c-4898-8628-03b1825e74e0:
+    name: Finn
+    lore:
+    - 'Where did his supporter'
+    - 'discord rank go?'
+  200b0a6f-3f28-4322-8cd9-91ea74b7dc95:
+    name: China
+    lore:
+    - 'Was dead on my'
+    - 'testing server'
+  f046c2e3-67e2-4790-b89b-b1bcb243cd41:
+    name: West
+    lore:
+    - 'IAS Helper'
+  72627ef2-9719-4b75-b2cd-d08c9afda231:
+    name: Bobox
+    lore:
+    - 'Borivia Owner'
+server-manager:
+  069a79f4-44e9-4726-a5be-fca90e38aaf5:
+    name: Kai
+    lore:
+    - 'Kai, idk his ign'
+  d0579cd5-64c3-4b39-9ba1-85471d396a59:
+    name: RHD99
+    lore:
+    - 'Who?'
+project-manager:
+  ddcdc5ac-3f43-4833-af4e-f2b8ddbaf44f:
+    name: Giorgious
+    lore:
+    - 'He is the OfficialMCE at'
+    - 'MinecraftExpert'

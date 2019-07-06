@@ -24,3 +24,16 @@ commands:
   menu:
     description: View the Blueprint Menu
   getcar:
+  points:
+  rp:
+    description: View and download our resource pack!
+    aliases: [resourcepack, texturepack]
+  sm:
+    description: Visit our social media!
+    aliases: [socialmedia, contact]
+  pr:
+    description: Request a promotion!
+    aliases: [promotionrequest]
+  help:
+    description: Open the help menu, for well.. help
+  staff:

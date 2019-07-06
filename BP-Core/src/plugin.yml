@@ -1,0 +1,26 @@
+name: BlueprintCore
+version: 4.0
+description: The Official Plugin of Blueprint
+main: me.tigahz.bpcore.Main
+author: Tigahz
+api-version: 1.13
+depend: [WorldEdit]
+softdepend: [ActionBarAPI]
+commands:
+  id:
+    description: IDs in your ActionBar, helps with WorldEdit now that Mojang has removed numerical IDs
+    aliases: [idfinder, blockids, idchecker]
+  apply:
+    description: Apply for a builder rank on our server.
+    aliases: [application]
+  nv:
+    description: Toggle NightVision
+    aliases: [nightvision]
+  blueprint:
+    description: Blueprint Core Command
+    aliases: [bp]
+  swear:
+    description: Toggle whether or not you wish to censor swear words
+  menu:
+    description: View the Blueprint Menu
+  getcar:

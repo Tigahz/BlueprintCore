@@ -95,7 +95,8 @@ public class BlueprintCommand implements CommandHandler {
 						Player p = (Player) cs;
 						
 						p.sendMessage(Ref.format(messages("prefix") + messages("opened-menu")));
-						MainMenu.createMenu(p);
+						MainMenu menu = new MainMenu();
+						menu.createMenu(p);
 						
 					}
 					

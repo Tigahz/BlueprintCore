@@ -104,7 +104,8 @@ public class ResourcePackMenu implements Listener, CommandHandler {
 				p.sendMessage(Ref.format(messages("prefix") + messages("lite-pack-link")));
 			} else if (Items.getClickedItem(e, "&c&lGo Back")) {
 				e.setCancelled(true);
-				MainMenu.createMenu(p);
+				MainMenu menu = new MainMenu();
+				menu.createMenu(p);
 			} else if (Items.getClickedItem(e, "&c&lExit Menu")) {
 				e.setCancelled(true);
 				p.closeInventory();

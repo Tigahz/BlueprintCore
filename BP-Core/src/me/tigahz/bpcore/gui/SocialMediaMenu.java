@@ -37,20 +37,20 @@ public class SocialMediaMenu implements Listener, CommandHandler {
 		ArrayList<String> pmcLore = new ArrayList<>();
 		pmcLore.add(Ref.format("&bVisit our PlanetMinecraft"));
 		pmcLore.add(Ref.format("&bfor awesome creations!"));
-		Items.createLoredItem(i, itemStack, Material.CACTUS_GREEN, 10, "&a&lPlanet&b&lMinecraft", pmcLore);
+		Items.createLoredItem(i, itemStack, Material.MUSIC_DISC_STRAD, 10, "&a&lPlanet&b&lMinecraft", pmcLore);
 		
 		ArrayList<String> twitterLore = new ArrayList<>();
 		twitterLore.add(Ref.format("&bVisit our twitter!"));
-		Items.createLoredItem(i, itemStack, Material.LAPIS_LAZULI, 12, "&b&lTwitter", twitterLore);
+		Items.createLoredItem(i, itemStack, Material.MUSIC_DISC_WARD, 12, "&b&lTwitter", twitterLore);
 		
 		ArrayList<String> discordLore = new ArrayList<>();
 		discordLore.add(Ref.format("&bGo to our discord to"));
 		discordLore.add(Ref.format("&btalk to us!"));
-		Items.createLoredItem(i, itemStack, Material.PURPLE_DYE, 14, "&9&lDiscord", discordLore);
+		Items.createLoredItem(i, itemStack, Material.MUSIC_DISC_STAL, 14, "&9&lDiscord", discordLore);
 		
 		ArrayList<String> ytLore = new ArrayList<>();
 		ytLore.add(Ref.format("&bVisit our YouTube!"));
-		Items.createLoredItem(i, itemStack, Material.ROSE_RED, 16, "&4&lYou&f&lTube", ytLore);
+		Items.createLoredItem(i, itemStack, Material.MUSIC_DISC_11, 16, "&4&lYou&f&lTube", ytLore);
 		
 		Items.createItem(i, itemStack, Material.SUGAR_CANE, 27, "&c&lGo Back");
 		Items.createItem(i, itemStack, Material.BONE_MEAL, 35, "&c&lExit Menu");
@@ -120,7 +120,8 @@ public class SocialMediaMenu implements Listener, CommandHandler {
 				p.sendMessage(Ref.format(messages("prefix") + messages("yt-link")));
 			} else if (Items.getClickedItem(e, "&c&lGo Back")) {
 				e.setCancelled(true);
-				MainMenu.createMenu(p);
+				MainMenu menu = new MainMenu();
+				menu.createMenu(p);
 			} else if (Items.getClickedItem(e, "&c&lExit Menu")) {
 				e.setCancelled(true);
 				p.closeInventory();

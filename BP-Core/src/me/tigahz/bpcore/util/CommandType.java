@@ -2,7 +2,7 @@ package me.tigahz.bpcore.util;
 
 public enum CommandType {
 
-	ID_TOGGLE, APPLY, NIGHT_VISION, BLUEPRINT, SWEAR, MENU, POINTS, BPPOINTS, RP_MENU, SM_MENU, HELP_MENU, PR, STAFF, WARN;
+	ID_TOGGLE, APPLY, NIGHT_VISION, BLUEPRINT, SWEAR, MENU, POINTS, BPPOINTS, RP_MENU, SM_MENU, HELP_MENU, PR, STAFF, PROJECTS_MENU;
 	
 	public static String getCommand(CommandType cmd) {
 		
@@ -34,8 +34,8 @@ public enum CommandType {
 			msg = "pr";
 		} else if (cmd == STAFF) {
 			msg = "staff";
-		} else if (cmd == WARN) {
-			msg = "warn";
+		} else if (cmd == PROJECTS_MENU) {
+			msg = "projects";
 		}
 		
 		return msg;

@@ -27,8 +27,8 @@ public class MainMenu implements CommandHandler, Listener {
 		return MessagesConfig.getConfig().getString(string);
 	}
 	
-	static String menuName = Ref.format("&9&lBlueprint Menu");
-	static ItemStack itemStack;
+	String menuName = Ref.format("&9&lBlueprint Menu");
+	ItemStack itemStack;
 	
 	@Override
 	public List<String> onTabComplete(CommandSender arg0, Command arg1, String arg2, String[] arg3) {
@@ -60,7 +60,7 @@ public class MainMenu implements CommandHandler, Listener {
 		return CommandType.getCommand(CommandType.MENU);
 	}
 	
-	public static void createMenu(final Player p) {
+	public void createMenu(final Player p) {
 		
 		Inventory i = Bukkit.createInventory(null, 54, menuName);
 		
@@ -144,7 +144,8 @@ public class MainMenu implements CommandHandler, Listener {
 				socialMedia.createMenu(p);
 			} else if (Items.getClickedItem(e, "&9&lProjects")) {
 				e.setCancelled(true);
-				p.sendMessage("projects menu");
+				ProjectsMenu projects = new ProjectsMenu();
+				projects.createMenu(p);
 			} else if (Items.getClickedItem(e, "&9&lOur Website")) {
 				e.setCancelled(true);
 				p.performCommand("website");

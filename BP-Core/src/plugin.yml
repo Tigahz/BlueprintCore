@@ -37,4 +37,6 @@ commands:
   help:
     description: Open the help menu, for well.. help
   staff:
-  warn:
+    description: View the staff memebers of the server
+  projects:
+    description: View current projects on the servers

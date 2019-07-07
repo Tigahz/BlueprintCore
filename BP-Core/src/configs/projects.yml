@@ -1,7 +1,150 @@
-CityOne:
-  name: 'Cartegenia De Indias'
-  used: true
-  warps:
-    Parroquia San Pedro Claver:
-      position: 1
-      warpName: 'Cartegena:ParroquiaSanPedroClaver'
+cities:
+  CityOne:
+    name: 'Cartegenia De Indias'
+    used: true
+    warps:
+      Parroquia San Pedro Claver:
+        position: 1
+        warpName: 'Cartegena:ParroquiaSanPedroClaver'
+      Monumento Torre Del Reloj:
+        position: 2
+        warpName: 'Cartegena:MonumentoTorreDelReloj'
+      Parque De La Marina:
+        position: 3
+        warpName: 'Cartegena:ParqueDeLaMarina'
+      Plaza De Bolivar:
+        position: 4
+        warpName: 'Cartegena:PlazaDeBolivar'
+      Plaza De La Aduana:
+        position: 5
+        warpName: 'Cartegena:PlazaDeLaAduana'
+  CityTwo:
+    name: 'Argon'
+    used: true
+    warps:
+      Downtown Argon:
+        position: 1
+        warpName: 'Argon:Downtown'
+      North Argon:
+        position: 2
+        warpName: 'Argon:North'
+      Argon University:
+        position: 3
+        warpName: 'Argon:University'
+  CityThree:
+    name: 'Hamilton'
+    used: true
+    warps:
+      Marshall:
+        position: 1
+        warpName: 'Hamilton:Marshall'
+      Midtown:
+        position: 2
+        warpName: 'Hamilton:Midtown'
+      Overlook:
+        position: 3
+        warpName: 'Hamilton:Overlook'
+      Ridgewood:
+        position: 4
+        warpName: 'Hamilton:Ridgewood'
+      Selwick:
+        position: 5
+        warpName: 'Hamilton:Selwick'
+      Sublette Heights:
+        position: 6
+        warpName: 'Hamilton:SubletteHeights'
+  CityFour:
+    name: 'Larimer'
+    used: true
+    warps:
+      Jefferson Point:
+        position: 1
+        warpName: 'Larimer:JeffersonPoint'
+  CityFive:
+    name: 'NYC'
+    used: true 
+    warps:
+      Chinatown:
+        position: 1
+        warpName: 'NYC:Chinatown'
+      Times Square:
+        position: 2
+        warpName: 'NYC:TimesSquare'
+      Wall Street:
+        position: 3
+        warpName: 'NYC:WallStreet'
+      WTC:
+        position: 4
+        warpName: 'NYC:WTC'
+  CitySix:
+    name: 'Nations'
+    used: true
+    warps:
+      Alpenwald:
+        position: 1
+        warpName: 'Nations:Alpenwald'
+      Avalon:
+        position: 2
+        warpName: 'Nations:Avalon'
+      Borivia:
+        position: 3
+        warpName: 'Nations:Borivia'
+      Canaydia:
+        position: 4
+        warpName: 'Nations:Canaydia'
+      Dakota:
+        position: 5
+        warpName: 'Nations:Dakota'
+      Escambia:
+        position: 6
+        warpName: 'Nations:Escambia'
+      Hessen:
+        position: 7
+        warpName: 'Nations:Hessen'
+      Mingtao:
+        position: 8
+        warpName: 'Nations:Mingtao'
+      Nordterre:
+        position: 9
+        warpName: 'Nations:Nordterre'
+      Ontario:
+        position: 10
+        warpName: 'Nations:Ontario'
+      Ouesterre:
+        position: 11
+        warpName: 'Nations:Ouesterre'
+      Tregnome:
+        position: 12
+        warpName: 'Nations:Tregnome'
+  CitySeven:
+    name: ''
+    used: false
+    warps:
+  CityEight:
+    name: ''
+    used: false
+    warps:
+  CityNine:
+    name: ''
+    used: false
+    warps:
+  CityTen:
+    name: ''
+    used: false
+    warps:
+  CityEleven:
+    name: ''
+    used: false
+    warps:
+  CityTwelve:
+    name: ''
+    used: false
+    warps:
+  CityThirteen:
+    name: ''
+    used: false
+    warps:
+  CityFourteen:
+    name: ''
+    used: false
+    warps:

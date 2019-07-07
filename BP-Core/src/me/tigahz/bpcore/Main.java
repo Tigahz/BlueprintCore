@@ -20,10 +20,10 @@ import me.tigahz.bpcore.config.ProjectsConfig;
 import me.tigahz.bpcore.config.StaffConfig;
 import me.tigahz.bpcore.gui.HelpMenu;
 import me.tigahz.bpcore.gui.MainMenu;
+import me.tigahz.bpcore.gui.ProjectsMenu;
 import me.tigahz.bpcore.gui.ResourcePackMenu;
 import me.tigahz.bpcore.gui.SocialMediaMenu;
-import me.tigahz.bpcore.gui.StaffCommand;
-import me.tigahz.bpcore.gui.StaffListener;
+import me.tigahz.bpcore.gui.StaffMenu;
 import me.tigahz.bpcore.handler.IDHandler;
 import me.tigahz.bpcore.handler.SwearHandler;
 import me.tigahz.bpcore.listeners.JoinEvents;
@@ -53,12 +53,7 @@ public class Main extends JavaPlugin {
 		registerConfigs();
 		
 		IDHandler.idRunnable();
-		
-		/*Inventory i = null;
-		@SuppressWarnings({ "unchecked" })
-		final List<Director> directors = (List<Director>) StaffConfig.getConfig().getList("directors");
-		directors.forEach(it -> it.insertInto(i));*/
-		
+
 	}
 
 	@Override
@@ -72,7 +67,7 @@ public class Main extends JavaPlugin {
 		
 	}
 	
-	private void registerConfigs() {
+	void registerConfigs() {
 		
 		DefaultConfig.createConfig();
 		ccs.sendMessage(Ref.format("&9BP &8 - &aConfig config.yml loaded"));
@@ -91,7 +86,7 @@ public class Main extends JavaPlugin {
 		
 	}
 
-	private void registerListeners() {
+	void registerListeners() {
 		
 		org.bukkit.plugin.PluginManager pm = Bukkit.getPluginManager();
 		
@@ -103,11 +98,12 @@ public class Main extends JavaPlugin {
 		pm.registerEvents(new ResourcePackMenu(), this);
 		pm.registerEvents(new SocialMediaMenu(), this);
 		pm.registerEvents(new HelpMenu(), this);
-		pm.registerEvents(new StaffListener(), this);
+		pm.registerEvents(new StaffMenu(), this);
+		pm.registerEvents(new ProjectsMenu(), this);
 		
 	}
 
-	private void registerCommands() {
+	void registerCommands() {
 		
 		Stream.of(new IDHandler()).forEach(it -> it.register(this));
 		Stream.of(new ApplyCommand()).forEach(it -> it.register(this));
@@ -121,7 +117,8 @@ public class Main extends JavaPlugin {
 		Stream.of(new SocialMediaMenu()).forEach(it -> it.register(this));
 		Stream.of(new PromotionRequestCommand()).forEach(it -> it.register(this));
 		Stream.of(new HelpMenu()).forEach(it -> it.register(this));
-		Stream.of(new StaffCommand()).forEach(it -> it.register(this));
+		Stream.of(new StaffMenu()).forEach(it -> it.register(this));
+		Stream.of(new ProjectsMenu()).forEach(it -> it.register(this));
 		
 	}
 	

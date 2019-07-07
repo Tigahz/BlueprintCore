@@ -132,7 +132,8 @@ public class HelpMenu implements CommandHandler, Listener {
 				e.setCancelled(true);
 				p.sendMessage("cl");
 			} else if (Items.getClickedItem(e, "&c&lGo Back")) {
-				MainMenu.createMenu(p);
+				MainMenu menu = new MainMenu();
+				menu.createMenu(p);
 				e.setCancelled(true);
 			} else if (Items.getClickedItem(e, "&c&lExit Menu")) {
 				e.setCancelled(true);

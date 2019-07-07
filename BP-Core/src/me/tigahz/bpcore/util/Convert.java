@@ -2,14 +2,19 @@ package me.tigahz.bpcore.util;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.UUID;
 
 import org.apache.commons.io.IOUtils;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.Inventory;
+import org.bukkit.inventory.ItemStack;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.JSONValue;
 import org.json.simple.parser.ParseException;
+
+import me.tigahz.bpcore.config.StaffConfig;
 
 
 public class Convert {
@@ -79,6 +84,24 @@ public class Convert {
 			return "2";
 		} else {
 			return null;
+		}
+		
+	}
+	
+	public static void createStaff(String rank, String colour, int addition, Inventory i, ItemStack itemStack) {
+		
+		for (String uuid : StaffConfig.getConfig().getConfigurationSection(rank).getKeys(false)) {
+			
+			UUID u = UUID.fromString(uuid);
+			ArrayList<String> ll = new ArrayList<>();
+			int pos = Math.addExact(StaffConfig.getConfig().getInt(rank + "." + u + ".position"), addition);
+			String getName = Ref.format("&" + colour + "&l" + Convert.getNameFromUUID(u));
+			
+			for (String lore : StaffConfig.getConfig().getStringList(rank + "." + u + ".lore")) {
+				ll.add(Ref.format("&" + colour + "&o" + lore));
+				Items.createSkull(i, itemStack, pos, u, getName, ll);
+			}
+			
 		}
 		
 	}

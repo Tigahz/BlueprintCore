@@ -58,7 +58,7 @@ public class BlueprintCommand implements CommandHandler {
 				
 				if (args[0].equalsIgnoreCase("reload")) {
 					
-					if (cs.hasPermission(PermissionsType.getPermission(PermissionsType.RELOAD))) {
+					if (cs.hasPermission(PermissionsType.getPermission(PermissionsType.ADMIN))) {
 						
 						ConsoleCommandSender ccs = Bukkit.getConsoleSender();
 						
@@ -78,6 +78,7 @@ public class BlueprintCommand implements CommandHandler {
 						
 						StaffConfig.reloadConfig();
 						ccs.sendMessage(Ref.format("&9BP &8 - &aConfig configs/staff.yml reloaded"));
+
 						
 					} else {
 						

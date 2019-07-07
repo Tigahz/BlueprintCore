@@ -123,7 +123,7 @@ public class MainMenu implements CommandHandler, Listener {
 		Player p = (Player) e.getWhoClicked();
 		
 		if (e.getClickedInventory().getName().equalsIgnoreCase(menuName)) {
-			
+
 			if (e.getClickedInventory() == null) {
 				e.setCancelled(true);
 			} else if (!e.getCurrentItem().hasItemMeta()) {
@@ -132,13 +132,16 @@ public class MainMenu implements CommandHandler, Listener {
 				e.setCancelled(true);
 			} else if (Items.getClickedItem(e, "&9&lHelp")) {
 				e.setCancelled(true);
-				HelpMenu.createMenu(p);
+				HelpMenu help = new HelpMenu();
+				help.createMenu(p);
 			} else if (Items.getClickedItem(e, "&9&lResource Pack")) {
 				e.setCancelled(true);
-				ResourcePackMenu.createMenu(p);
+				ResourcePackMenu resourcePack = new ResourcePackMenu();
+				resourcePack.createMenu(p);
 			} else if (Items.getClickedItem(e, "&9&lSocial Media")) {
 				e.setCancelled(true);
-				SocialMediaMenu.createMenu(p);
+				SocialMediaMenu socialMedia = new SocialMediaMenu();
+				socialMedia.createMenu(p);
 			} else if (Items.getClickedItem(e, "&9&lProjects")) {
 				e.setCancelled(true);
 				p.sendMessage("projects menu");

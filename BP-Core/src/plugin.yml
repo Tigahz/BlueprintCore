@@ -37,3 +37,4 @@ commands:
   help:
     description: Open the help menu, for well.. help
   staff:
+  warn:

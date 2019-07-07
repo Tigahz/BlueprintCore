@@ -27,10 +27,10 @@ public class SocialMediaMenu implements Listener, CommandHandler {
 		return MessagesConfig.getConfig().getString(string);
 	}
 	
-	static String menuName = Ref.format("&9&lSocial Media Menu");
-	static ItemStack itemStack;
+	String menuName = Ref.format("&9&lSocial Media Menu");
+	ItemStack itemStack;
 	
-	public static void createMenu(Player p) {
+	public void createMenu(Player p) {
 		
 		Inventory i = Bukkit.createInventory(null, 36, menuName);
 		

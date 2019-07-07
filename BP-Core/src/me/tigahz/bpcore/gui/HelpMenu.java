@@ -27,8 +27,8 @@ public class HelpMenu implements CommandHandler, Listener {
 		return MessagesConfig.getConfig().getString(string);
 	}
 	
-	static String menuName = Ref.format("&9&lHelp Menu");
-	static ItemStack itemStack;
+	String menuName = Ref.format("&9&lHelp Menu");
+	ItemStack itemStack;
 	
 	@Override
 	public List<String> onTabComplete(CommandSender arg0, Command arg1, String arg2, String[] arg3) {
@@ -60,7 +60,7 @@ public class HelpMenu implements CommandHandler, Listener {
 		return CommandType.getCommand(CommandType.HELP_MENU);
 	}
 	
-	public static void createMenu(final Player p) {
+	public void createMenu(final Player p) {
 		
 		Inventory i = Bukkit.createInventory(null, 45, menuName);
 		

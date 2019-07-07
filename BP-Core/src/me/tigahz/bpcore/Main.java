@@ -4,6 +4,7 @@ import java.util.stream.Stream;
 
 import org.bukkit.Bukkit;
 import org.bukkit.command.ConsoleCommandSender;
+import org.bukkit.configuration.serialization.ConfigurationSerialization;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -21,11 +22,13 @@ import me.tigahz.bpcore.gui.HelpMenu;
 import me.tigahz.bpcore.gui.MainMenu;
 import me.tigahz.bpcore.gui.ResourcePackMenu;
 import me.tigahz.bpcore.gui.SocialMediaMenu;
-import me.tigahz.bpcore.gui.StaffMenu;
+import me.tigahz.bpcore.gui.StaffCommand;
+import me.tigahz.bpcore.gui.StaffListener;
 import me.tigahz.bpcore.handler.IDHandler;
 import me.tigahz.bpcore.handler.SwearHandler;
 import me.tigahz.bpcore.listeners.JoinEvents;
 import me.tigahz.bpcore.listeners.LoadCarsEvent;
+import me.tigahz.bpcore.rank.Director;
 import me.tigahz.bpcore.util.Ref;
 
 public class Main extends JavaPlugin {
@@ -36,6 +39,8 @@ public class Main extends JavaPlugin {
 
 	@Override
 	public void onEnable() {
+		
+		ConfigurationSerialization.registerClass(Director.class);
 		
 		ccs.sendMessage(Ref.format("&8---------------------------"));
 		ccs.sendMessage(Ref.format("&9Blueprint Core - &bEnabled!"));
@@ -48,6 +53,11 @@ public class Main extends JavaPlugin {
 		registerConfigs();
 		
 		IDHandler.idRunnable();
+		
+		/*Inventory i = null;
+		@SuppressWarnings({ "unchecked" })
+		final List<Director> directors = (List<Director>) StaffConfig.getConfig().getList("directors");
+		directors.forEach(it -> it.insertInto(i));*/
 		
 	}
 
@@ -79,7 +89,6 @@ public class Main extends JavaPlugin {
 		StaffConfig.createConfig();
 		ccs.sendMessage(Ref.format("&9BP &8 - &aConfig configs/staff.yml loaded"));
 		
-		
 	}
 
 	private void registerListeners() {
@@ -94,6 +103,7 @@ public class Main extends JavaPlugin {
 		pm.registerEvents(new ResourcePackMenu(), this);
 		pm.registerEvents(new SocialMediaMenu(), this);
 		pm.registerEvents(new HelpMenu(), this);
+		pm.registerEvents(new StaffListener(), this);
 		
 	}
 
@@ -111,7 +121,7 @@ public class Main extends JavaPlugin {
 		Stream.of(new SocialMediaMenu()).forEach(it -> it.register(this));
 		Stream.of(new PromotionRequestCommand()).forEach(it -> it.register(this));
 		Stream.of(new HelpMenu()).forEach(it -> it.register(this));
-		Stream.of(new StaffMenu()).forEach(it -> it.register(this));
+		Stream.of(new StaffCommand()).forEach(it -> it.register(this));
 		
 	}
 	

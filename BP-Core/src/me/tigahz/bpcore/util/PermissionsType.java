@@ -2,14 +2,14 @@ package me.tigahz.bpcore.util;
 
 public enum PermissionsType {
 	
-	RELOAD;
+	ADMIN;
 	
 	public static String getPermission(PermissionsType type) {
 		
 		String msg = "";
 		
-		if (type == RELOAD) {
-			msg = "blueprint.reload";
+		if (type == ADMIN) {
+			msg = "blueprint.admin";
 		}
 		
 		return msg;

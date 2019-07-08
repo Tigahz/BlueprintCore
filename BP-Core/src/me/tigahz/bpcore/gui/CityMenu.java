@@ -32,7 +32,7 @@ public class CityMenu implements Listener {
 	
 	public void createMenu(Player p) {
 		
-		String menuName = Ref.format("&a&l" + ProjectsConfig.getConfig().getString("cities." + name + ".name"));
+		String menuName = Ref.format("&" + colour + "&l" + ProjectsConfig.getConfig().getString("cities." + name + ".name"));
 		i = Bukkit.createInventory(null, 36, menuName);
 		
 		@SuppressWarnings("unchecked")

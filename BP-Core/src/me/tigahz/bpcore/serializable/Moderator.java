@@ -1,4 +1,4 @@
-package me.tigahz.bpcore.rank;
+package me.tigahz.bpcore.serializable;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -59,7 +59,11 @@ public final class Moderator implements ConfigurationSerializable {
 			meta.setDisplayName(Ref.format("&c&l" + username));
 		}
 		
-		meta.setLore(lore);
+		List<String> ll = new ArrayList<>();
+		for (String list : lore) {
+			ll.add(Ref.format("&c&o" + list));
+		}
+		meta.setLore(ll);
 		
 		item.setItemMeta(meta);
 		return item;

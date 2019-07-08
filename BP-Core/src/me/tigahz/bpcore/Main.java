@@ -28,7 +28,12 @@ import me.tigahz.bpcore.handler.IDHandler;
 import me.tigahz.bpcore.handler.SwearHandler;
 import me.tigahz.bpcore.listeners.JoinEvents;
 import me.tigahz.bpcore.listeners.LoadCarsEvent;
-import me.tigahz.bpcore.rank.Director;
+import me.tigahz.bpcore.serializable.City;
+import me.tigahz.bpcore.serializable.Developer;
+import me.tigahz.bpcore.serializable.Director;
+import me.tigahz.bpcore.serializable.Moderator;
+import me.tigahz.bpcore.serializable.ProjectManager;
+import me.tigahz.bpcore.serializable.ServerManager;
 import me.tigahz.bpcore.util.Ref;
 
 public class Main extends JavaPlugin {
@@ -41,6 +46,11 @@ public class Main extends JavaPlugin {
 	public void onEnable() {
 		
 		ConfigurationSerialization.registerClass(Director.class);
+		ConfigurationSerialization.registerClass(Moderator.class);
+		ConfigurationSerialization.registerClass(ServerManager.class);
+		ConfigurationSerialization.registerClass(ProjectManager.class);
+		ConfigurationSerialization.registerClass(Developer.class);
+		ConfigurationSerialization.registerClass(City.class);
 		
 		ccs.sendMessage(Ref.format("&8---------------------------"));
 		ccs.sendMessage(Ref.format("&9Blueprint Core - &bEnabled!"));

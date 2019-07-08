@@ -1,5 +1,7 @@
 package me.tigahz.bpcore.gui;
 
+import java.util.List;
+
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -8,34 +10,37 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 
 import me.tigahz.bpcore.config.ProjectsConfig;
+import me.tigahz.bpcore.serializable.City;
 import me.tigahz.bpcore.util.Items;
 //import me.tigahz.bpcore.util.Ref;
+import me.tigahz.bpcore.util.Ref;
 
 public class CityMenu implements Listener {
 
-	private String city = null;
+	private final String name;
+	private final Material material;
+	private final String colour;
 	
-	public CityMenu(String city) {
-		this.city = city;
+	public CityMenu(String name, Material material, String colour) {
+		this.name = name;
+		this.material = material;
+		this.colour = colour;
 	}
 	
 	Inventory i;
 	ItemStack itemStack;
-	//String menuName = Ref.format(ProjectsConfig.getConfig().getString("cities." + city.toString() + ".name"));
-	String menuName = "A";
 	
-	public void createMenu(Player p, Material material) {
+	public void createMenu(Player p) {
 		
+		String menuName = Ref.format("&a&l" + ProjectsConfig.getConfig().getString("cities." + name + ".name"));
 		i = Bukkit.createInventory(null, 36, menuName);
 		
-		for (String getWarp : ProjectsConfig.getConfig().getConfigurationSection("cities." + city + ".warps").getKeys(false)) {
-			
-			@SuppressWarnings("unused")
-			String warp = ProjectsConfig.getConfig().getString(getWarp + ".warpName");
-			int position = ProjectsConfig.getConfig().getInt(getWarp + ".position");
-			Items.createItem(i, itemStack, material, position, "&a&l" + getWarp);
-			
-		}
+		@SuppressWarnings("unchecked")
+		final List<City> city = (List<City>) ProjectsConfig.getConfig().getList("cities." + name + ".warps");
+		city.forEach(it -> it.insertInto(i, material, colour));
+		
+		Items.createItem(i, itemStack, Material.SUGAR_CANE, 27, "&c&lGo Back");
+		Items.createItem(i, itemStack, Material.BONE_MEAL, 35, "&c&lExit Menu");
 		
 		p.openInventory(i);
 		

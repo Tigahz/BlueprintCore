@@ -1,4 +1,4 @@
-package me.tigahz.bpcore.rank;
+package me.tigahz.bpcore.serializable;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -16,14 +16,14 @@ import org.bukkit.inventory.meta.SkullMeta;
 
 import me.tigahz.bpcore.util.Ref;
 
-public final class Director implements ConfigurationSerializable {
+public final class ProjectManager implements ConfigurationSerializable {
 	
 	private final OfflinePlayer op;
 	private final int position;
 	private final List<String> lore;
 	
 	@SuppressWarnings("unchecked")
-	public Director(Map<String, Object> map) {
+	public ProjectManager(Map<String, Object> map) {
 		
 		final UUID uuid = UUID.fromString((String) map.get("uuid"));
 		this.op = Bukkit.getOfflinePlayer(uuid);
@@ -53,13 +53,17 @@ public final class Director implements ConfigurationSerializable {
 
 		if (username == null) {
 			meta.setOwner(username);
-			meta.setDisplayName(Ref.format("&9&lPlayer hasn't joined"));
+			meta.setDisplayName(Ref.format("&b&lPlayer hasn't joined"));
 		} else {
 			meta.setOwner(username);
-			meta.setDisplayName(Ref.format("&9&l" + username));
+			meta.setDisplayName(Ref.format("&b&l" + username));
 		}
 		
-		meta.setLore(lore);
+		List<String> ll = new ArrayList<>();
+		for (String list : lore) {
+			ll.add(Ref.format("&b&o" + list));
+		}
+		meta.setLore(ll);
 		
 		item.setItemMeta(meta);
 		return item;
@@ -68,7 +72,7 @@ public final class Director implements ConfigurationSerializable {
 	
 	public void insertInto(Inventory i) {
 		final ItemStack item = this.asItemStack();
-		i.setItem(position+1, item);
+		i.setItem(position+28, item);
 	}
 
 }

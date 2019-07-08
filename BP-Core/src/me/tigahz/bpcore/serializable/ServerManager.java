@@ -1,4 +1,4 @@
-package me.tigahz.bpcore.rank;
+package me.tigahz.bpcore.serializable;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -16,14 +16,14 @@ import org.bukkit.inventory.meta.SkullMeta;
 
 import me.tigahz.bpcore.util.Ref;
 
-public final class ProjectManager implements ConfigurationSerializable {
+public final class ServerManager implements ConfigurationSerializable {
 	
 	private final OfflinePlayer op;
 	private final int position;
 	private final List<String> lore;
 	
 	@SuppressWarnings("unchecked")
-	public ProjectManager(Map<String, Object> map) {
+	public ServerManager(Map<String, Object> map) {
 		
 		final UUID uuid = UUID.fromString((String) map.get("uuid"));
 		this.op = Bukkit.getOfflinePlayer(uuid);
@@ -59,7 +59,11 @@ public final class ProjectManager implements ConfigurationSerializable {
 			meta.setDisplayName(Ref.format("&b&l" + username));
 		}
 		
-		meta.setLore(lore);
+		List<String> ll = new ArrayList<>();
+		for (String list : lore) {
+			ll.add(Ref.format("&b&o" + list));
+		}
+		meta.setLore(ll);
 		
 		item.setItemMeta(meta);
 		return item;
@@ -68,7 +72,7 @@ public final class ProjectManager implements ConfigurationSerializable {
 	
 	public void insertInto(Inventory i) {
 		final ItemStack item = this.asItemStack();
-		i.setItem(position+28, item);
+		i.setItem(position+19, item);
 	}
 
 }

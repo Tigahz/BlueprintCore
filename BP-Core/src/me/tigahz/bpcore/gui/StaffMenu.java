@@ -16,11 +16,11 @@ import org.bukkit.inventory.ItemStack;
 
 import me.tigahz.bpcore.config.MessagesConfig;
 import me.tigahz.bpcore.config.StaffConfig;
-import me.tigahz.bpcore.rank.Developer;
-import me.tigahz.bpcore.rank.Director;
-import me.tigahz.bpcore.rank.Moderator;
-import me.tigahz.bpcore.rank.ProjectManager;
-import me.tigahz.bpcore.rank.ServerManager;
+import me.tigahz.bpcore.serializable.Developer;
+import me.tigahz.bpcore.serializable.Director;
+import me.tigahz.bpcore.serializable.Moderator;
+import me.tigahz.bpcore.serializable.ProjectManager;
+import me.tigahz.bpcore.serializable.ServerManager;
 import me.tigahz.bpcore.util.CommandHandler;
 import me.tigahz.bpcore.util.CommandType;
 import me.tigahz.bpcore.util.ErrorType;
@@ -115,9 +115,9 @@ public class StaffMenu implements CommandHandler, Listener {
 		pm.forEach(it -> it.insertInto(i));
 		
 		ArrayList<String> devLore = new ArrayList<>();
-		devLore.add(Ref.format("&b&oThese people develop the"));
-		devLore.add(Ref.format("&b&oserver and add spicy plugins,"));
-		devLore.add(Ref.format("&b&olike this, to the server :)"));
+		devLore.add(Ref.format("&f&oThese people develop the"));
+		devLore.add(Ref.format("&f&oserver and add spicy plugins,"));
+		devLore.add(Ref.format("&f&olike this, to the server :)"));
 		Items.createLoredItem(i, itemStack, Material.BONE_MEAL, 36, "&6[&fDeveloper&6]", devLore);
 		
 		@SuppressWarnings("unchecked")

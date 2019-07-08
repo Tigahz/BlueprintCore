@@ -1,95 +1,95 @@
 directors:
-  - ==: me.tigahz.bpcore.rank.Director
+  - ==: me.tigahz.bpcore.serializable.Director
     uuid: cd984ea6-afb6-4420-84a3-0a48c35ed017
     position: 1
     lore:
     - 'Ryer is the great'
-  - ==: me.tigahz.bpcore.rank.Director
+  - ==: me.tigahz.bpcore.serializable.Director
     uuid: d647a72b-a933-41fe-a620-e77b6c71f1c8
     position: 2
     lore:
     - 'Eh add what u want'
     - 'about Adam lmao'
-  - ==: me.tigahz.bpcore.rank.Director
+  - ==: me.tigahz.bpcore.serializable.Director
     uuid: 21e2492e-b7fa-4015-aa9c-999c46fdf838
     position: 3
     lore:
     - 'Steve is pretty noice'
-  - ==: me.tigahz.bpcore.rank.Director
+  - ==: me.tigahz.bpcore.serializable.Director
     uuid: 37d35d3b-b635-4f02-b2c1-9b4c3d0cdf83
     position: 4
     lore:
     - 'Beez was never on IAS'
-  - ==: me.tigahz.bpcore.rank.Director
+  - ==: me.tigahz.bpcore.serializable.Director
     uuid: 6fd65c6b-8e27-47b1-ac53-59fdc2b6b8ac
     position: 5
     lore:
     - 'Ngl never seen Zappa on'
 moderators:
-  - ==: me.tigahz.bpcore.rank.Moderator
+  - ==: me.tigahz.bpcore.serializable.Moderator
     uuid: ae22fda2-7b43-44a1-898c-a680cfd18a62
     position: 1
     lore:
     - 'Tot has more bans'
     - 'on IAS than MCE'
-  - ==: me.tigahz.bpcore.rank.Moderator
+  - ==: me.tigahz.bpcore.serializable.Moderator
     uuid: 200b0a6f-3f28-4322-8cd9-91ea74b7dc95
     position: 2
     lore:
     - 'China was AFK on'
     - 'my testing server'
-  - ==: me.tigahz.bpcore.rank.Moderator
+  - ==: me.tigahz.bpcore.serializable.Moderator
     uuid: 72627ef2-9719-4b75-b2cd-d08c9afda231
     position: 3
     lore:
     - 'Bobox <3 Borivia'
     - '(please ban Sami)'
-  - ==: me.tigahz.bpcore.rank.Moderator
+  - ==: me.tigahz.bpcore.serializable.Moderator
     uuid: 154b49ab-9c0c-4898-8628-03b1825e74e0
     position: 4
     lore:
     - 'Where did Finns supporter'
     - 'discord rank go?'
-  - ==: me.tigahz.bpcore.rank.Moderator
+  - ==: me.tigahz.bpcore.serializable.Moderator
     uuid: f046c2e3-67e2-4790-b89b-b1bcb243cd41
     position: 5
     lore:
     - 'West = IAS Helper'
 server-managers:
-  - ==: me.tigahz.bpcore.rank.ServerManager
+  - ==: me.tigahz.bpcore.serializable.ServerManager
     uuid: d0579cd5-64c3-4b39-9ba1-85471d396a59
     position: 1
     lore:
-    - 'RHD99, idk'
-  - ==: me.tigahz.bpcore.rank.ServerManager
+    - "I'm sorry, but who is RHD99?"
+  - ==: me.tigahz.bpcore.serializable.ServerManager
     uuid: 495746ec-29af-4453-bb02-4eb129326cf3
     position: 2
     lore:
     - 'Neptune, idk'
-  - ==: me.tigahz.bpcore.rank.ServerManager
+  - ==: me.tigahz.bpcore.serializable.ServerManager
     uuid: 069a79f4-44e9-4726-a5be-fca90e38aaf5
     position: 3
     lore:
     - 'Kai, idk'
 project-managers:
-  - ==: me.tigahz.bpcore.rank.ProjectManager
+  - ==: me.tigahz.bpcore.serializable.ProjectManager
     uuid: ddcdc5ac-3f43-4833-af4e-f2b8ddbaf44f
     position: 1
     lore:
     - 'He is the OfficialMCE'
     - 'at MinecraftExpert_'
 developers:
-  - ==: me.tigahz.bpcore.rank.Developer
+  - ==: me.tigahz.bpcore.serializable.Developer
     uuid: c9daba71-4a5d-436e-b805-e110745e6851
     position: 1
     lore:
     - 'The best person on the server'
-  - ==: me.tigahz.bpcore.rank.Developer
+  - ==: me.tigahz.bpcore.serializable.Developer
     uuid: 3151ebcc-2d66-45cd-86a1-60c413572aac
     position: 2
     lore:
     - 'Pokeball the jstnf'
-  - ==: me.tigahz.bpcore.rank.Developer
+  - ==: me.tigahz.bpcore.serializable.Developer
     uuid: edba2813-b029-44a5-ab49-07cecb0d9906
     position: 3
     lore:

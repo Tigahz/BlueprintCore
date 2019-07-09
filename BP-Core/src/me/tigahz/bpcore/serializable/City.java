@@ -55,5 +55,13 @@ public final class City implements ConfigurationSerializable {
 		final ItemStack item = this.asItemStack(material, colour);
 		i.setItem(position-1, item);
 	}
+	
+	public String warpName() {
+		return Ref.format(warpName);
+	}
+	
+	public String getName(String colour) {
+		return Ref.format("&" + colour + "&l" + name);
+	}
 
 }

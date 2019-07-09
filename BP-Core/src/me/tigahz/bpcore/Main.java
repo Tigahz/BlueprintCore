@@ -18,6 +18,7 @@ import me.tigahz.bpcore.config.FAQConfig;
 import me.tigahz.bpcore.config.MessagesConfig;
 import me.tigahz.bpcore.config.ProjectsConfig;
 import me.tigahz.bpcore.config.StaffConfig;
+import me.tigahz.bpcore.gui.CityMenu;
 import me.tigahz.bpcore.gui.HelpMenu;
 import me.tigahz.bpcore.gui.MainMenu;
 import me.tigahz.bpcore.gui.ProjectsMenu;
@@ -110,6 +111,7 @@ public class Main extends JavaPlugin {
 		pm.registerEvents(new HelpMenu(), this);
 		pm.registerEvents(new StaffMenu(), this);
 		pm.registerEvents(new ProjectsMenu(), this);
+		pm.registerEvents(new CityMenu(null, null, null), this);
 		
 	}
 

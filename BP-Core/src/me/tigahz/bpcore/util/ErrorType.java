@@ -2,7 +2,7 @@ package me.tigahz.bpcore.util;
 
 public enum ErrorType {
 	
-	NON_PLAYER_COMMAND_SENDER, NO_PERMISSIONS, INCORRECT_ARGS, UNABLE_TO_LOAD, PLAYER_NOT_ONLINE;
+	NON_PLAYER_COMMAND_SENDER, NO_PERMISSIONS, INCORRECT_ARGS, UNABLE_TO_LOAD, PLAYER_NOT_ONLINE, FREEZE_BYPASS;
 	
 	public static String getError(ErrorType errors) {
 		
@@ -19,6 +19,8 @@ public enum ErrorType {
 			msg = prefix + "Unable to load schematic!";
 		} else if (errors == PLAYER_NOT_ONLINE) {
 			msg = prefix + "Player is not online!";
+		} else if (errors == FREEZE_BYPASS) {
+			msg = prefix + "You cannot freeze that player!";
 		}
 		
 		return msg;

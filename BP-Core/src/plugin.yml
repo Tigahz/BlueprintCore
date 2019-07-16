@@ -24,7 +24,9 @@ commands:
   menu:
     description: View the Blueprint Menu
   getcar:
+    description: Paste a random car from our library
   points:
+    description: View the amount of points you have
   rp:
     description: View and download our resource pack!
     aliases: [resourcepack, texturepack]
@@ -40,3 +42,24 @@ commands:
     description: View the staff memebers of the server
   projects:
     description: View current projects on the servers
+  ranks:
+    description: View the obtainable ranks on the server
+  website:
+    description: Go to our website!
+  buildingtools:
+    description: Various building tools to enhance your build!
+    aliases: [bt]
+  #chatfreeze:
+  #  description: Freezes chat. Mod command
+  #  aliases: [lockchat]
+  #playerfreeze:
+  #  description: Freezes a player. Mod command
+  #  alises: [pf]
+  gettree:
+    description: Paste a random tree from our library
+  showbuild:
+    description: Request for a promotion, by showing staff your best build
+  asdj2k:
+  checkbuild: 
+    description: Check Show Build Requests. Mod command
+  bppoints:

@@ -1,4 +1,4 @@
-package me.tigahz.bpcore.listeners;
+package me.tigahz.bpcore.listeners.worldedit;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -12,9 +12,6 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
-import org.bukkit.event.EventHandler;
-import org.bukkit.event.Listener;
-import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
@@ -33,14 +30,13 @@ import com.sk89q.worldedit.math.transform.AffineTransform;
 import com.sk89q.worldedit.session.ClipboardHolder;
 
 import me.tigahz.bpcore.Main;
-import me.tigahz.bpcore.config.MessagesConfig;
 import me.tigahz.bpcore.util.CommandHandler;
 import me.tigahz.bpcore.util.Convert;
 import me.tigahz.bpcore.util.Ref;
 
-public class LoadCarsEvent implements CommandHandler, Listener {
+public class LoadCarsEvent implements CommandHandler {
 	
-	private void loadCar(Player p) throws WorldEditException {
+	public void loadCar(Player p) throws WorldEditException {
 		
 		final File[] files = new File(Main.getInstance().getDataFolder() + File.separator + "schematics" + File.separator + "car" + File.separator).listFiles();
 		Random random = new Random();
@@ -107,18 +103,6 @@ public class LoadCarsEvent implements CommandHandler, Listener {
 	@Override
 	public String getName() {
 		return "getcar";
-	}
-	
-	@EventHandler
-	public void interact(PlayerInteractEvent e) throws WorldEditException {
-		
-		Player p = e.getPlayer();
-		
-		if (p.getInventory().getItemInMainHand().getType() == Material.IRON_AXE && p.getInventory().getItemInMainHand().getItemMeta().getDisplayName().equalsIgnoreCase(Ref.format("&b&lCar Wand"))) {
-			loadCar(p);
-			p.sendMessage(Ref.format(MessagesConfig.getConfig().getString("prefix") + "Successfully loaded and pasted car"));
-		}
-		
 	}
 
 }

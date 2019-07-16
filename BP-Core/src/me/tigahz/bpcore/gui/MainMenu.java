@@ -148,7 +148,8 @@ public class MainMenu implements CommandHandler, Listener {
 				projects.createMenu(p);
 			} else if (Items.getClickedItem(e, "&9&lOur Website")) {
 				e.setCancelled(true);
-				p.performCommand("website");
+				p.closeInventory();
+				p.performCommand("blueprintcore:website");
 			} else if (Items.getClickedItem(e, "&9&lRules")) {
 				e.setCancelled(true);
 				p.closeInventory();
@@ -169,7 +170,8 @@ public class MainMenu implements CommandHandler, Listener {
 				p.performCommand("blueprintcore:pr");
 			} else if (Items.getClickedItem(e, "&9&lBuilding Tools")) {
 				e.setCancelled(true);
-				p.sendMessage("bt");
+				BuildingToolsMenu menu = new BuildingToolsMenu();
+				menu.createMenu(p);
 			} else if (Items.getClickedItem(e, "&c&lGo Back")) {
 				e.setCancelled(true);
 			} else if (Items.getClickedItem(e, "&c&lExit Menu")) {

@@ -2,7 +2,8 @@ package me.tigahz.bpcore.util;
 
 public enum CommandType {
 
-	ID_TOGGLE, APPLY, NIGHT_VISION, BLUEPRINT, SWEAR, MENU, POINTS, BPPOINTS, RP_MENU, SM_MENU, HELP_MENU, PR, STAFF, PROJECTS_MENU;
+	ID_TOGGLE, APPLY, NIGHT_VISION, BLUEPRINT, SWEAR, MENU, POINTS, BPPOINTS, RP_MENU, SM_MENU, HELP_MENU, PR, STAFF, PROJECTS_MENU, RANKS,
+	WEBSITE, BT, CHATFREEZE, PLAYERFREEZE, TREE_MENU, SHOWBUILD, CHECKBUILD;
 	
 	public static String getCommand(CommandType cmd) {
 		
@@ -36,7 +37,24 @@ public enum CommandType {
 			msg = "staff";
 		} else if (cmd == PROJECTS_MENU) {
 			msg = "projects";
+		} else if (cmd == RANKS) {
+			msg = "ranks";
+		} else if (cmd == WEBSITE) {
+			msg = "website";
+		} else if (cmd == BT) {
+			msg = "buildingtools";
+		} else if (cmd == CHATFREEZE) {
+			msg = "chatfreeze";
+		} else if (cmd == PLAYERFREEZE) {
+			msg = "playerfreeze";
+		} else if (cmd == TREE_MENU) {
+			msg = "gettree";
+		} else if (cmd == SHOWBUILD) {
+			msg = "showbuild";
+		} else if (cmd == CHECKBUILD) {
+			msg = "checkbuild";
 		}
+		
 		
 		return msg;
 		

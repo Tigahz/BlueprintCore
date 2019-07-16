@@ -2,7 +2,7 @@ package me.tigahz.bpcore.util;
 
 public enum PermissionsType {
 	
-	ADMIN;
+	ADMIN, SCHEM;
 	
 	public static String getPermission(PermissionsType type) {
 		
@@ -10,6 +10,8 @@ public enum PermissionsType {
 		
 		if (type == ADMIN) {
 			msg = "blueprint.admin";
+		} else if (type == SCHEM) {
+			msg = "blueprint.schem";
 		}
 		
 		return msg;

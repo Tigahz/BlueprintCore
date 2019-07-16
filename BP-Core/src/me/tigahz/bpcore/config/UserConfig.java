@@ -15,9 +15,9 @@ import me.tigahz.bpcore.Main;
 
 public class UserConfig {
 
-	File f;
-	FileConfiguration c;
-	UUID uuid;
+	private File f;
+	private FileConfiguration c;
+	private UUID uuid;
 	
 	public UserConfig(UUID uuid) {
 		this.uuid = uuid;
@@ -68,8 +68,6 @@ public class UserConfig {
 			e.printStackTrace();
 		}
 		
-		
-		
 	}
 	
 	void exist(UUID uuid) {
@@ -85,7 +83,6 @@ public class UserConfig {
 				c.set("nightvision", false);
 				c.set("id", true);
 				c.set("swear", true);
-				c.set("requests", null);
 				
 				c.save(f);
 				

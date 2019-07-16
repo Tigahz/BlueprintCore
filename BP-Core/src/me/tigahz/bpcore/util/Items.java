@@ -79,10 +79,6 @@ public class Items {
     	itemStack = createSkull(uuid, name, lore);
     	i.setItem(integer, itemStack);
     }
-
-	public static boolean getClickedItem(InventoryClickEvent e, Object forEach) {
-		return e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase(Ref.format((String) forEach));
-	}
 	
 	
 }

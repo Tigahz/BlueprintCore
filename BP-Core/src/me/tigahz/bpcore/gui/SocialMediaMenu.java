@@ -46,7 +46,7 @@ public class SocialMediaMenu implements Listener, CommandHandler {
 		ArrayList<String> discordLore = new ArrayList<>();
 		discordLore.add(Ref.format("&bGo to our discord to"));
 		discordLore.add(Ref.format("&btalk to us!"));
-		Items.createLoredItem(i, itemStack, Material.MUSIC_DISC_STAL, 14, "&9&lDiscord", discordLore);
+		Items.createLoredItem(i, itemStack, Material.MUSIC_DISC_WAIT, 14, "&9&lDiscord", discordLore);
 		
 		ArrayList<String> ytLore = new ArrayList<>();
 		ytLore.add(Ref.format("&bVisit our YouTube!"));

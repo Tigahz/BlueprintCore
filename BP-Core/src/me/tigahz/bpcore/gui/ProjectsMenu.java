@@ -171,60 +171,60 @@ public class ProjectsMenu implements CommandHandler, Listener {
 				e.setCancelled(true);
 			} else if (Items.getClickedItem(e, "&a&l" + ProjectsConfig.getConfig().getString("cities.CityOne.name"))) {
 				e.setCancelled(true);
-				CityMenu city = new CityMenu("CityOne", Material.CACTUS_GREEN, "a");
-				city.createMenu(p);
+				CityMenu city = new CityMenu();
+				city.createMenu(p, "CityOne", Material.CACTUS_GREEN, "a");
 			} else if (Items.getClickedItem(e, "&b&l" + ProjectsConfig.getConfig().getString("cities.CityTwo.name"))) {
 				e.setCancelled(true);
-				CityMenu city = new CityMenu("CityTwo", Material.LIGHT_BLUE_DYE, "b");
-				city.createMenu(p);
+				CityMenu city = new CityMenu();
+				city.createMenu(p, "CityTwo", Material.LIGHT_BLUE_DYE, "b");
 			} else if (Items.getClickedItem(e, "&9&l" + ProjectsConfig.getConfig().getString("cities.CityThree.name"))) {
 				e.setCancelled(true);
-				CityMenu city = new CityMenu("CityThree", Material.LAPIS_LAZULI, "9");
-				city.createMenu(p);
+				CityMenu city = new CityMenu();
+				city.createMenu(p, "CityThree", Material.LAPIS_LAZULI, "9");
 			} else if (Items.getClickedItem(e, "&5&l" + ProjectsConfig.getConfig().getString("cities.CityFour.name"))) {
 				e.setCancelled(true);
-				CityMenu city = new CityMenu("CityFour", Material.PURPLE_DYE, "5");
-				city.createMenu(p);
+				CityMenu city = new CityMenu();
+				city.createMenu(p, "CityFour", Material.PURPLE_DYE, "5");
 			} else if (Items.getClickedItem(e, "&d&l" + ProjectsConfig.getConfig().getString("cities.CityFive.name"))) {
 				e.setCancelled(true);
-				CityMenu city = new CityMenu("CityFive", Material.PINK_DYE, "d");
-				city.createMenu(p);
+				CityMenu city = new CityMenu();
+				city.createMenu(p, "CityFive", Material.PINK_DYE, "d");
 			} else if (Items.getClickedItem(e, "&c&l" + ProjectsConfig.getConfig().getString("cities.CitySix.name"))) {
 				e.setCancelled(true);
-				CityMenu city = new CityMenu("CitySix", Material.ROSE_RED, "c");
-				city.createMenu(p);
+				CityMenu city = new CityMenu();
+				city.createMenu(p, "CitySix", Material.ROSE_RED, "c");
 			} else if (Items.getClickedItem(e, "&6&l" + ProjectsConfig.getConfig().getString("cities.CitySeven.name"))) {
 				e.setCancelled(true);
-				CityMenu city = new CityMenu("CitySeven", Material.ORANGE_DYE, "6");
-				city.createMenu(p);
+				CityMenu city = new CityMenu();
+				city.createMenu(p, "CitySeven", Material.ORANGE_DYE, "6");
 			} else if (Items.getClickedItem(e, "&c&l" + ProjectsConfig.getConfig().getString("cities.CityEight.name"))) {
 				e.setCancelled(true);
-				CityMenu city = new CityMenu("CityEight", Material.ROSE_RED, "c");
-				city.createMenu(p);
+				CityMenu city = new CityMenu();
+				city.createMenu(p, "CityEight", Material.ROSE_RED, "c");
 			} else if (Items.getClickedItem(e, "&6&l" + ProjectsConfig.getConfig().getString("cities.CityNine.name"))) {
 				e.setCancelled(true);
-				CityMenu city = new CityMenu("CityNine", Material.ORANGE_DYE, "6");
-				city.createMenu(p);
+				CityMenu city = new CityMenu();
+				city.createMenu(p, "CityNine", Material.ORANGE_DYE, "6");
 			} else if (Items.getClickedItem(e, "&e&l" + ProjectsConfig.getConfig().getString("cities.CityTen.name"))) {
 				e.setCancelled(true);
-				CityMenu city = new CityMenu("CityTen", Material.DANDELION_YELLOW, "e");
-				city.createMenu(p);
+				CityMenu city = new CityMenu();
+				city.createMenu(p, "CityTen", Material.DANDELION_YELLOW, "e");
 			} else if (Items.getClickedItem(e, "&a&l" + ProjectsConfig.getConfig().getString("cities.CityEleven.name"))) {
 				e.setCancelled(true);
-				CityMenu city = new CityMenu("CityEleven", Material.CACTUS_GREEN, "a");
-				city.createMenu(p);
+				CityMenu city = new CityMenu();
+				city.createMenu(p, "CityEleven", Material.CACTUS_GREEN, "a");
 			} else if (Items.getClickedItem(e, "&b&l" + ProjectsConfig.getConfig().getString("cities.CityTwelve.name"))) {
 				e.setCancelled(true);
-				CityMenu city = new CityMenu("CityTwelve", Material.LIGHT_BLUE_DYE, "b");
-				city.createMenu(p);
+				CityMenu city = new CityMenu();
+				city.createMenu(p, "CityTwelve", Material.LIGHT_BLUE_DYE, "b");
 			} else if (Items.getClickedItem(e, "&9&l" + ProjectsConfig.getConfig().getString("cities.CityThirteen.name"))) {
 				e.setCancelled(true);
-				CityMenu city = new CityMenu("CityThirteen", Material.LAPIS_LAZULI, "9");
-				city.createMenu(p);
+				CityMenu city = new CityMenu();
+				city.createMenu(p, "CityThirteen", Material.LAPIS_LAZULI, "9");
 			} else if (Items.getClickedItem(e, "&5&l" + ProjectsConfig.getConfig().getString("cities.CityFourteen.name"))) {
 				e.setCancelled(true);
-				CityMenu city = new CityMenu("CityFourteen", Material.PURPLE_DYE, "5");
-				city.createMenu(p);
+				CityMenu city = new CityMenu();
+				city.createMenu(p, "CityFourteen", Material.PURPLE_DYE, "5");
 			} else if (Items.getClickedItem(e, "&c&lGo Back")) {
 				e.setCancelled(true);
 				MainMenu menu = new MainMenu();

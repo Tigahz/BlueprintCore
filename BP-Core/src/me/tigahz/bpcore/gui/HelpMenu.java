@@ -124,10 +124,12 @@ public class HelpMenu implements CommandHandler, Listener {
 				p.sendMessage("showbuild");
 			} else if (Items.getClickedItem(e, "&9&lRanks")) {
 				e.setCancelled(true);
-				p.sendMessage("ranks");
+				RanksMenu menu = new RanksMenu();
+				menu.createMenu(p);
 			} else if (Items.getClickedItem(e, "&9&lStaff")) {
 				e.setCancelled(true);
-				p.sendMessage("staff");
+				StaffMenu menu = new StaffMenu();
+				menu.createMenu(p);
 			} else if (Items.getClickedItem(e, "&9&lCommand List")) {
 				e.setCancelled(true);
 				p.sendMessage("cl");

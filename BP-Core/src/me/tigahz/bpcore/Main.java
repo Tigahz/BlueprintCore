@@ -10,25 +10,36 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import me.tigahz.bpcore.commands.ApplyCommand;
 import me.tigahz.bpcore.commands.BlueprintCommand;
+import me.tigahz.bpcore.commands.BlueprintPointsCommand;
 import me.tigahz.bpcore.commands.NightVisionCommand;
 import me.tigahz.bpcore.commands.PointsCommand;
 import me.tigahz.bpcore.commands.PromotionRequestCommand;
+import me.tigahz.bpcore.commands.RandomStringCommnad;
+import me.tigahz.bpcore.commands.ShowBuildCommand;
+import me.tigahz.bpcore.commands.WebsiteCommand;
 import me.tigahz.bpcore.config.DefaultConfig;
 import me.tigahz.bpcore.config.FAQConfig;
 import me.tigahz.bpcore.config.MessagesConfig;
 import me.tigahz.bpcore.config.ProjectsConfig;
+import me.tigahz.bpcore.config.RequestsConfig;
 import me.tigahz.bpcore.config.StaffConfig;
+import me.tigahz.bpcore.gui.BuildingToolsMenu;
+import me.tigahz.bpcore.gui.CheckBuildsMenu;
 import me.tigahz.bpcore.gui.CityMenu;
 import me.tigahz.bpcore.gui.HelpMenu;
 import me.tigahz.bpcore.gui.MainMenu;
 import me.tigahz.bpcore.gui.ProjectsMenu;
+import me.tigahz.bpcore.gui.RanksMenu;
 import me.tigahz.bpcore.gui.ResourcePackMenu;
 import me.tigahz.bpcore.gui.SocialMediaMenu;
 import me.tigahz.bpcore.gui.StaffMenu;
+import me.tigahz.bpcore.gui.UserMenu;
 import me.tigahz.bpcore.handler.IDHandler;
 import me.tigahz.bpcore.handler.SwearHandler;
 import me.tigahz.bpcore.listeners.JoinEvents;
-import me.tigahz.bpcore.listeners.LoadCarsEvent;
+import me.tigahz.bpcore.listeners.worldedit.LoadCarsEvent;
+import me.tigahz.bpcore.listeners.worldedit.TreeWandCommand;
+import me.tigahz.bpcore.listeners.worldedit.WorldEditListener;
 import me.tigahz.bpcore.serializable.City;
 import me.tigahz.bpcore.serializable.Developer;
 import me.tigahz.bpcore.serializable.Director;
@@ -40,6 +51,7 @@ import me.tigahz.bpcore.util.Ref;
 public class Main extends JavaPlugin {
 	
 	static Plugin instance;
+	public static boolean chat = true;
 	
 	ConsoleCommandSender ccs = Bukkit.getConsoleSender();
 
@@ -92,6 +104,9 @@ public class Main extends JavaPlugin {
 		ProjectsConfig.createConfig();
 		ccs.sendMessage(Ref.format("&9BP &8 - &aConfig configs/projects.yml loaded"));
 		
+		RequestsConfig.createConfig();
+		ccs.sendMessage(Ref.format("&9BP &8 - &aConfig configs/request.yml loaded"));
+		
 		StaffConfig.createConfig();
 		ccs.sendMessage(Ref.format("&9BP &8 - &aConfig configs/staff.yml loaded"));
 		
@@ -105,13 +120,18 @@ public class Main extends JavaPlugin {
 		pm.registerEvents(new JoinEvents(), this);
 		pm.registerEvents(new SwearHandler(), this);
 		pm.registerEvents(new MainMenu(), this);
-		pm.registerEvents(new LoadCarsEvent(), this);
+		pm.registerEvents(new WorldEditListener(), this);
 		pm.registerEvents(new ResourcePackMenu(), this);
 		pm.registerEvents(new SocialMediaMenu(), this);
 		pm.registerEvents(new HelpMenu(), this);
 		pm.registerEvents(new StaffMenu(), this);
 		pm.registerEvents(new ProjectsMenu(), this);
-		pm.registerEvents(new CityMenu(null, null, null), this);
+		pm.registerEvents(new CityMenu(), this);
+		pm.registerEvents(new RanksMenu(), this);
+		pm.registerEvents(new BuildingToolsMenu(), this);
+		pm.registerEvents(new TreeWandCommand(), this);
+		pm.registerEvents(new CheckBuildsMenu(), this);
+		pm.registerEvents(new UserMenu(), this);
 		
 	}
 
@@ -131,6 +151,14 @@ public class Main extends JavaPlugin {
 		Stream.of(new HelpMenu()).forEach(it -> it.register(this));
 		Stream.of(new StaffMenu()).forEach(it -> it.register(this));
 		Stream.of(new ProjectsMenu()).forEach(it -> it.register(this));
+		Stream.of(new RanksMenu()).forEach(it -> it.register(this));
+		Stream.of(new WebsiteCommand()).forEach(it -> it.register(this));
+		Stream.of(new BuildingToolsMenu()).forEach(it -> it.register(this));
+		Stream.of(new TreeWandCommand()).forEach(it -> it.register(this));
+		Stream.of(new ShowBuildCommand()).forEach(it -> it.register(this));
+		Stream.of(new RandomStringCommnad()).forEach(it -> it.register(this));
+		Stream.of(new CheckBuildsMenu()).forEach(it -> it.register(this));
+		Stream.of(new BlueprintPointsCommand()).forEach(it -> it.register(this));
 		
 	}
 	

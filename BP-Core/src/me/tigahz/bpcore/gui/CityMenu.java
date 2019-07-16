@@ -17,21 +17,11 @@ import me.tigahz.bpcore.util.Items;
 import me.tigahz.bpcore.util.Ref;
 
 public class CityMenu implements Listener {
-
-	private final String name;
-	private final Material material;
-	private final String colour;
-	
-	public CityMenu(String name, Material material, String colour) {
-		this.name = name;
-		this.material = material;
-		this.colour = colour;
-	}
 	
 	Inventory i;
 	ItemStack itemStack;
 	
-	public void createMenu(Player p) {
+	public void createMenu(Player p, String name, Material material, String colour) {
 		
 		String menuName = Ref.format("&" + colour + "&l" + ProjectsConfig.getConfig().getString("cities." + name + ".name"));
 		i = Bukkit.createInventory(null, 36, menuName);
@@ -41,6 +31,7 @@ public class CityMenu implements Listener {
 		city.forEach(it -> it.insertInto(i, material, colour));
 		
 		Items.createItem(i, itemStack, Material.SUGAR_CANE, 27, "&c&lGo Back");
+		Items.createItem(i, itemStack, Material.AIR, 31, name);
 		Items.createItem(i, itemStack, Material.BONE_MEAL, 35, "&c&lExit Menu");
 		
 		p.openInventory(i);
@@ -50,9 +41,9 @@ public class CityMenu implements Listener {
 	@EventHandler
 	public void onCityClick(InventoryClickEvent e) {
 		
-		String menuName = Ref.format("&" + colour + "&l" + ProjectsConfig.getConfig().getString("cities." + name + ".name"));
-		@SuppressWarnings({ "unchecked", "unused" })
-		List<City> city = (List<City>) ProjectsConfig.getConfig().getList("cities." + name + ".warps"); 
+		String menuName = e.getInventory().getName();
+		String itemName = e.getCurrentItem().getItemMeta().getDisplayName();
+		String name = itemName.substring(itemName.indexOf("&l")+1).replace("&l", "");
 		Player p = (Player) e.getWhoClicked();
 		
 		if (e.getClickedInventory().getName().equalsIgnoreCase(menuName)) {
@@ -64,7 +55,7 @@ public class CityMenu implements Listener {
 			} else if (e.getCurrentItem() == null) {
 				e.setCancelled(true);
 			} else if (Items.getClickedItem(e, "&c&lGo Back")) {
-				MainMenu menu = new MainMenu();
+				ProjectsMenu menu = new ProjectsMenu();
 				menu.createMenu(p);
 				e.setCancelled(true);
 			} else if (Items.getClickedItem(e, "&c&lExit Menu")) {
@@ -73,6 +64,9 @@ public class CityMenu implements Listener {
 			} else if (Items.getClickedItem(e, name)) {
 				e.setCancelled(true);
 				p.closeInventory();
+				String eName = e.getInventory().getItem(31).getItemMeta().getDisplayName();
+				String warpName = ProjectsConfig.getConfig().getString("cities." + eName + ".warps.");
+				p.sendMessage("warping to " + name);
 				p.performCommand("warp " + name);
 			} else {
 				e.setCancelled(true);
